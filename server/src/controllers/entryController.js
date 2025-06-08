@@ -19,8 +19,14 @@ exports.getEntries = async (req, res) => {
 
     if (from || to) {
       filter.createdAt = {};
-      if (from) filter.createdAt.$gte = new Date(from);
-      if (to) filter.createdAt.$lte = new Date(to);
+      if (from) {
+        filter.createdAt.$gte = new Date(from);
+      }
+      if (to) {
+        const toDate = new Date(to);
+        toDate.setHours(23, 59, 59, 999);
+        filter.createdAt.$lte = toDate;
+      }
     }
 
     const entries = await Entry.find(filter).sort({ createdAt: -1 });
