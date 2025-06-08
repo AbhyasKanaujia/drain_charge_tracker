@@ -1,8 +1,8 @@
 const SummaryCard = ({ entries }) => {
   const count = { C: 0, D: 0 };
-  entries.forEach(e => {
-    if (e.type === 'C') count.C += 1;
-    else if (e.type === 'D') count.D += 1;
+  entries.forEach((e) => {
+    if (e.type === "C") count.C += 1;
+    else if (e.type === "D") count.D += 1;
   });
 
   const total = count.C + count.D;

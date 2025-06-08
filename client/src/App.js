@@ -1,19 +1,19 @@
-import { useState } from 'react';
-import PageContainer from './components/layout/PageContainer';
-import Heading from './components/atoms/Heading';
+import { useState } from "react";
+import PageContainer from "./components/layout/PageContainer";
+import Heading from "./components/atoms/Heading";
 
-import EntryForm from './components/organisms/EntryForm';
-import EntryList from './components/organisms/EntryList';
-import SummaryCard from './components/organisms/SummaryCard';
-import DrainSuggestion from './components/organisms/DrainSuggestion';
+import EntryForm from "./components/organisms/EntryForm";
+import EntryList from "./components/organisms/EntryList";
+import SummaryCard from "./components/organisms/SummaryCard";
+import DrainSuggestion from "./components/organisms/DrainSuggestion";
 
 function App() {
   const [entries, setEntries] = useState([]);
 
   const handleAddEntry = (entry) => {
-    setEntries(prev => [
+    setEntries((prev) => [
       { ...entry, createdAt: new Date().toISOString() },
-      ...prev
+      ...prev,
     ]);
   };
 

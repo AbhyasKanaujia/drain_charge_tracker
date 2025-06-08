@@ -1,5 +1,5 @@
-import EntryRow from '../molecules/EntryRow';
-import Heading from '../atoms/Heading';
+import EntryRow from "../molecules/EntryRow";
+import Heading from "../atoms/Heading";
 
 const EntryList = ({ entries = [] }) => {
   return (
@@ -8,9 +8,7 @@ const EntryList = ({ entries = [] }) => {
       {entries.length === 0 ? (
         <p className="text-sm text-gray-500">No entries yet.</p>
       ) : (
-        entries.map((entry, index) => (
-          <EntryRow key={index} entry={entry} />
-        ))
+        entries.map((entry, index) => <EntryRow key={index} entry={entry} />)
       )}
     </div>
   );

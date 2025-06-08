@@ -1,9 +1,9 @@
 const DrainSuggestion = ({ entries }) => {
-  const drains = entries.filter(e => e.type === 'D');
+  const drains = entries.filter((e) => e.type === "D");
   if (drains.length === 0) return null;
 
   const oldestDrain = drains.reduce((a, b) =>
-    new Date(a.createdAt) < new Date(b.createdAt) ? a : b
+    new Date(a.createdAt) < new Date(b.createdAt) ? a : b,
   );
 
   return (

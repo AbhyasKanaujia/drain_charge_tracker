@@ -1,31 +1,31 @@
-import { useState } from 'react';
-import TimeSlotSelect from '../molecules/TimeSlotSelect';
-import FeelingInput from '../molecules/FeelingInput';
-import TypeSelector from '../molecules/TypeSelector';
-import TextField from '../atoms/TextField';
-import TextArea from '../atoms/TextArea';
-import Button from '../atoms/Button';
+import { useState } from "react";
+import TimeSlotSelect from "../molecules/TimeSlotSelect";
+import FeelingInput from "../molecules/FeelingInput";
+import TypeSelector from "../molecules/TypeSelector";
+import TextField from "../atoms/TextField";
+import TextArea from "../atoms/TextArea";
+import Button from "../atoms/Button";
 
 const defaultState = {
-  timeSlot: '',
-  activity: '',
-  feelingAfter: '',
-  type: '',
-  notes: ''
+  timeSlot: "",
+  activity: "",
+  feelingAfter: "",
+  type: "",
+  notes: "",
 };
 
 const EntryForm = ({ onSubmit }) => {
   const [formData, setFormData] = useState(defaultState);
 
   const handleChange = (e) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
   const handleTypeChange = (e) => {
-    setFormData(prev => ({ ...prev, type: e.target.value }));
+    setFormData((prev) => ({ ...prev, type: e.target.value }));
   };
 
   const handleSubmit = (e) => {
@@ -54,7 +54,9 @@ const EntryForm = ({ onSubmit }) => {
         onChange={handleChange}
         placeholder="Optional thoughts..."
       />
-      <Button type="submit" variant="primary">Add Entry</Button>
+      <Button type="submit" variant="primary">
+        Add Entry
+      </Button>
     </form>
   );
 };
