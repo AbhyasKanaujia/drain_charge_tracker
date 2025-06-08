@@ -1,6 +1,17 @@
-const TextField = ({ label, name, value, onChange, placeholder, type = 'text' }) => (
+const TextField = ({
+  label,
+  name,
+  value,
+  onChange,
+  placeholder,
+  type = "text",
+}) => (
   <div className="flex flex-col gap-1">
-    {label && <label htmlFor={name} className="text-sm text-gray-700">{label}</label>}
+    {label && (
+      <label htmlFor={name} className="text-sm text-gray-700">
+        {label}
+      </label>
+    )}
     <input
       id={name}
       name={name}

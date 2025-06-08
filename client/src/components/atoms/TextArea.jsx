@@ -1,6 +1,10 @@
 const TextArea = ({ label, name, value, onChange, placeholder, rows = 3 }) => (
   <div className="flex flex-col gap-1">
-    {label && <label htmlFor={name} className="text-sm text-gray-700">{label}</label>}
+    {label && (
+      <label htmlFor={name} className="text-sm text-gray-700">
+        {label}
+      </label>
+    )}
     <textarea
       id={name}
       name={name}

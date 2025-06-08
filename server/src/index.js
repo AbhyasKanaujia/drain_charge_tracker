@@ -6,8 +6,7 @@ const express = require("express");
 const connectDB = require("./config/db.js");
 
 const helloRouter = require("./routes/hello.js");
-const entriesRouter = require('./routes/entries.js');
-
+const entriesRouter = require("./routes/entries.js");
 
 dotenv.config();
 const app = express();
@@ -21,7 +20,7 @@ app.use(express.json());
 connectDB();
 
 app.use("/api/hello", helloRouter);
-app.use('/api/entries', entriesRouter);
+app.use("/api/entries", entriesRouter);
 
 if (process.env.NODE_ENV === "production") {
   const clientBuildPath = path.join(__dirname, "../../client/build");

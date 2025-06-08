@@ -1,4 +1,4 @@
-const Entry = require('../models/Entry');
+const Entry = require("../models/Entry");
 
 // Create
 exports.createEntry = async (req, res) => {
@@ -33,8 +33,10 @@ exports.getEntries = async (req, res) => {
 // Update
 exports.updateEntry = async (req, res) => {
   try {
-    const updated = await Entry.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    if (!updated) return res.status(404).json({ error: 'Entry not found' });
+    const updated = await Entry.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
+    if (!updated) return res.status(404).json({ error: "Entry not found" });
     res.json(updated);
   } catch (err) {
     res.status(400).json({ error: err.message });
@@ -45,8 +47,8 @@ exports.updateEntry = async (req, res) => {
 exports.deleteEntry = async (req, res) => {
   try {
     const deleted = await Entry.findByIdAndDelete(req.params.id);
-    if (!deleted) return res.status(404).json({ error: 'Entry not found' });
-    res.json({ message: 'Deleted' });
+    if (!deleted) return res.status(404).json({ error: "Entry not found" });
+    res.json({ message: "Deleted" });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
