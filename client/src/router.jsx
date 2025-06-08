@@ -1,7 +1,7 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import LogPage from './pages/LogPage';
-import ReviewPage from './pages/ReviewPage';
-import Navbar from './components/layout/Navbar';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LogPage from "./pages/LogPage";
+import ReviewPage from "./pages/ReviewPage";
+import Navbar from "./components/layout/Navbar";
 
 const AppRouter = () => (
   <BrowserRouter>
