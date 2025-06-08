@@ -1,7 +1,7 @@
 const API_BASE = process.env.REACT_APP_API_URL || "";
 
-export const fetchEntries = async () => {
-  const res = await fetch(`${API_BASE}/api/entries`);
+export const fetchEntries = async (query = "") => {
+  const res = await fetch(`${API_BASE}/api/entries${query ? "?" + query : ""}`);
   if (!res.ok) throw new Error("Failed to fetch entries");
   return res.json();
 };
